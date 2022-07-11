@@ -11,12 +11,13 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-function Header() {
+function Header({ showNav }) {
   const toCv = () => {
     window.open(
       "https://drive.google.com/file/d/1F9GhOlqtkLRNxqht_DCb3frKfhsZKFvu/view?usp=sharing"
     );
   };
+
   return (
     <>
       <div className={styles.social}>
@@ -36,34 +37,37 @@ function Header() {
           <FontAwesomeIcon icon={faHackerrank} />
         </a>
       </div>
-      <div className={styles["wrapper-header"]}>
+
+      <div
+        className={
+          showNav ? styles["wrapper-header"] : styles["wrapper-header-hide"]
+        }
+      >
         <div>
-          <img src={image} alt="logo" />
+          <img src={image} alt="logo" width="30px" />
         </div>
         <nav className={styles.nav}>
-          <a href="/about">
+          <a href="#about">
             <span>01. </span>About
           </a>
-          <a href="/experience">
+          <a href="#experience">
             <span>02. </span>Experience
           </a>{" "}
-          <a href="/work">
+          <a href="#work">
             <span>03. </span>Work
           </a>
-          <a href="/contact">
+          <a href="#contact">
             <span>04. </span>Contact
           </a>
-          <div className={styles.gmail}>
-            <>
-              <Button onClick={toCv}>
-                <p>Resume</p>
-              </Button>
-            </>
-            <a href="locvkv1234@gmail.com">
-              <h4>locvkv1234@gmail.com</h4>
-            </a>
-          </div>
+          <>
+            <Button onClick={toCv}>
+              <p>Resume</p>
+            </Button>
+          </>
         </nav>
+      </div>
+      <div className={styles.gmail}>
+        <h4>locvkv1234@gmail.com</h4>
       </div>
     </>
   );

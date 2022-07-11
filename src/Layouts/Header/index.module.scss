@@ -1,9 +1,28 @@
 .wrapper-header {
-    padding: 20px 50px 0 50px;
+    padding: 0 50px 0 50px;
     background-color: var(--dark-navy);
     display: flex;
     align-items: center;
     font-family: var(--font-mono);
+    position: fixed;
+    top:0;
+    width: 1350px;
+    transform: translateY(0px);
+    transition: 0.7s;
+
+}
+.wrapper-header-hide {
+    padding: 0 50px 0 50px;
+    background-color: var(--dark-navy);
+    display: flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    position: fixed;
+    top: 0;
+    width: 1350px;
+    transform: translateY(-200px);
+    transition: 0.7s;
+    opacity: 0;
 }
 
 .wrapper-header img {
@@ -12,7 +31,9 @@
     border-radius: 8px;
     margin-right: 80px;
     cursor: pointer;
+    margin-top: 20px;
 }
+
 
 
 .wrapper-header nav {
@@ -72,27 +93,39 @@
 .gmail {
     display: flex;
     flex-direction: column;
-}
-
-.gmail a {
-    display: flex;
-    flex-direction: column;
     position: fixed;
     bottom: 0;
+    right: 0;
+}
+
+.gmail h4 {
+    position: fixed;
+    bottom: 0;
+    right: -57px;
+    text-decoration: none;
+    color: var(--lightest-slate);
+    cursor: pointer;
+}
+
+.gmail h4:hover {
+    color: var(--pink);
 }
 
 .gmail h4 {
     transform: rotate(90deg);
-    margin-bottom: 150px;
+    margin-bottom: 240px;
     letter-spacing: 4px;
+    margin-right: 0px;
 }
 
-.gmail a::after {
+.gmail::after {
     content: "";
-        display: block;
-        width: 1px;
-        height: 90px;
-        margin: 0px auto;
-        background-color: var(--light-slate);
-
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--light-slate);
+    bottom: 0;
+    right: 0;
+    margin-right: 80px;
 }
